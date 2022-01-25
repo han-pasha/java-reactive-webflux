@@ -1,0 +1,89 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.reactiveweb'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+//	all {
+//		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+//	}
+}
+
+//compileJava {
+//	options.compilerArgs += [
+//			'-Amapstruct.suppressGeneratorTimestamp=true',
+//			'-Amapstruct.suppressGeneratorVersionInfoComment=true',
+//			'-Amapstruct.verbose=true'
+//	]
+//}
+
+//dependencyManagement {
+//	imports {
+//		mavenBom "com.xtremax.jbase:jbase-bom:${jbase_bom_version}"
+//	}
+//}
+
+repositories {
+	mavenCentral()
+//	maven {
+//		url "http://repoproxy.xtrdev.info/artifactory/libs-release"
+//		allowInsecureProtocol = true
+//	}
+//	maven {
+//		url "http://repoproxy.xtrdev.info/artifactory/xtremax-jbase"
+//		allowInsecureProtocol = true
+//	}
+//	maven {
+//		url "http://repoproxy.xtrdev.info/artifactory/xtremax.jbase.beta"
+//		allowInsecureProtocol = true
+//	}
+//	maven {
+//		url "http://repoproxy.xtrdev.info/artifactory/xtremax.jbase.release"
+//		allowInsecureProtocol = true
+//	}
+//	maven {
+//		url "http://repoproxy.xtrdev.info/artifactory/xtremax.jbase.snapshot"
+//		allowInsecureProtocol = true
+//	}
+//	maven {
+//		url "http://repoproxy.xtrdev.info/artifactory/xtremax.aceas.beta"
+//		allowInsecureProtocol = true
+//	}
+//	maven {
+//		url "http://repoproxy.xtrdev.info/artifactory/xtremax.aceas.release"
+//		allowInsecureProtocol = true
+//	}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.h2database:h2'
+	runtimeOnly 'io.r2dbc:r2dbc-h2'
+
+//	implementation "com.xtremax.jbase:jbase-logging"
+//	implementation 'com.xtremax.jbase:jbase-common'
+
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+
+//	implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+//	annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+//	testAnnotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+}
+
+test {
+	useJUnitPlatform()
+}

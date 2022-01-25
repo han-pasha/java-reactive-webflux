@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS `TESTING`(
+    `testing_id`            INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    `testing_name`          VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `TICKET`(
+    `id`            INTEGER PRIMARY KEY AUTO_INCREMENT,
+    `name`          VARCHAR(100) NOT NULL,
+    `approver`      VARCHAR(100) NOT NULL
+);
