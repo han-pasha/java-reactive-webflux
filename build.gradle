@@ -79,9 +79,12 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
 
-//	implementation "org.mapstruct:mapstruct:${mapstructVersion}"
-//	annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
-//	testAnnotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+	// https://mvnrepository.com/artifact/com.google.guava/guava
+	implementation 'com.google.guava:guava:31.0.1-jre'
+
+	implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+	annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+	testAnnotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
 }
 
 test {
